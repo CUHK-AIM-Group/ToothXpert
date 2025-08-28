@@ -1,0 +1,17 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 deepspeed --master_port=32051 --include localhost:1,2 train_lora_base.py \
+  --version="./checkpoints/llava-v1.5-7b-med-align" \
+  --dataset_dir='./dataset' \
+  --vision_pretrained="./checkpoints/sam-vit-h/sam_vit_h_4b8939.pth" \
+  --dataset="sem_seg||vqa" \
+  --sem_seg_data="ade20k" \
+  --vqa_data="MMOPG_11cls_withsummary" \
+  --sample_rates="1,2" \
+  --exp_name="toothxpert-7b" \
+  --log_base_dir="./toothxpert_experiments" \
+  --batch_size=1 \
+  --val_dataset="ade20k" \
+  --epochs=400 \
+  --steps_per_epoch=500 \
+  --grad_accumulation_steps=1 \
+  --moe_lora \
+  --expert_num=4

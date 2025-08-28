@@ -96,6 +96,6 @@ python inference_toothxpert.py \
 - **`mypeft/`**: 🔧 Custom PEFT implementation with G-MoLE
 - **`utils/`**: 📊 Data processing and evaluation utilities
 
-## �📄 License
+## 📄 License
 
-This project is licensed under the Apache License.
+This project is licensed under the Apache License, Version 2.0.
